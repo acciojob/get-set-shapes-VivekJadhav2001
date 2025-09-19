@@ -1,41 +1,40 @@
-//complete this code
-class Rectangle{
+class Rectangle {
     #_width;
     #_height;
-    constructor(width,height){
+    constructor(width, height) {
         this.#_width = width;
-        this.#_height = height
+        this.#_height = height;
     }
     
-    get width(){
-        return this.#_width
+    get width() {
+        return this.#_width;
     }
 
-    get height(){
-        return this.#_height
+    get height() {
+        return this.#_height;
     }
 
-    getArea(){
-        return this.#_width * this.#_height
-    }
-}
-
-class Square extends Rectangle{
-    constructor(side){
-        super(side,side)
-        this.side = side
-    }
-
-    getPerimeter(){
-        return 4 * this.side
-    }
-    getArea(){
-        return 5
+    getArea() {
+        return this.#_width * this.#_height;
     }
 }
 
+class Square extends Rectangle {
+    constructor(side) {
+        super(side, side);
+        this.side = side;
+    }
 
+    getPerimeter() {
+        return 4 * this.side;
+    }
 
+    // Square area is side * side (or call parent)
+    getArea() {
+        return this.side * this.side;
+        // or: return super.getArea();
+    }
+}
 
 // Creating a Rectangle instance
 const rectangle = new Rectangle(5, 10);
